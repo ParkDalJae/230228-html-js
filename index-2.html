@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #menu{
+      width: 100px;
+      height: 100px;
+      background-color: violet;
+    }
+    #root>header{
+      width: 100px;
+      height: 100px;
+      border: 1px black solid;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    
+    const elementMaker = {
+      tagName: "",
+      setAttriName: "",
+      setAttriValue: "",
+      parent: "",
+
+      maker:function(){
+        const element = document.createElement(this.tagName);
+        element.setAttribute(this.setAttriName,this.setAttriValue)//속성을 만들어준다. id속성의 menu라는 id를
+        this.parent.appendChild(element)
+      } ,
+
+      loopFunc : function(){
+        for(i=0;i<100;i++){
+          this.maker();
+        }
+      } ,
+    }//안돌아감. 매개변수 부분 손볼 필요 있음
+    elementMaker.loopFunc();
+
+
+    // function ulMaker(tagName,setAttriName,setAttriValue,parent){
+    //   const element = document.createElement(tagName);
+    //   element.setAttribute(setAttriName,setAttriValue)//속성을 만들어준다. id속성의 menu라는 id를
+    //   parent.appendChild(element)
+    // }
+
+    // for(let i=0;i<100;i++){
+    //   ulMaker('header','id',`test-${i}`,root)
+    // }
+
+    // root.children[65].style.width = "200px";
+    // root.children[65].style.height = "200px";
+    // root.children[65].style.backgroundColor = "red";
+
+  </script>
+</body>
+</html>

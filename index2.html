@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const itsMe = {             //정적할당
+      name : "박달재",
+      age : 20,
+      home : "오라클",
+      hosil : "305호",
+      sentens: "저는 " + this.name + "입니다.",
+      test : `저는 ${this.name}입니다.`, //벡틱``(1옆의 물결표키) : 문자열 사이에 변수를 쓰려고 할때 사용
+      adult : function() {
+        if(this.age >= 20){
+          console.log("나는 성인이야")
+        }else{
+          console.log("나는 아직 성인이 아니야")
+        }
+      },
+    };
+    itsMe.nickname = function(){
+      this.name = "울고넘는 박달재"
+    }
+    console.log(itsMe.name)//박달재
+    itsMe.nickname();//닉네임 함수 실행
+    console.log(itsMe.name)//울고넘는 박달재
+  </script>
+</body>
+</html>

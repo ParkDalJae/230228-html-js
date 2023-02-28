@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // let root = document.getElementById('root')
+    const itsMe = {             //정적할당
+      name : "박달재",
+      age : 20,
+      home : "오라클",
+      hosil : "305호",
+      sentens: "저는 " + this.name + "입니다.",
+      test : `저는 ${this.name}입니다.`, //벡틱``(1옆의 물결표키) : 문자열 사이에 변수를 쓰려고 할때 사용
+      adult : function() {
+        if(this.age >= 20){
+          console.log("나는 성인이야")
+        }else{
+          console.log("나는 아직 성인이 아니야")
+        }
+      },
+    };
+    itsMe.adult();
+
+    itsMe.myName = function(){
+      
+      console.log("저는 " + itsMe.name + "입니다")
+    }
+    itsMe.myName();
+
+    // const itsMe ={}
+    // itsMe.name = "박달재";
+    // itsMe.age = 20;                 //동적할당
+    // itsMe.home = "오라클";
+    // itsMe.hosil = "305호";
+
+    // console.dir(itsMe)
+    // console.log(itsMe.name)
+    // console.log(itsMe.age)
+    
+
+
+
+    // var a = 1; //중복선언 가능, 자주 오류가 남
+    // var a = 2;
+
+    // let b = 3;//중복선언 불가, 재할당 가능
+    // b = 2
+
+    // const c = 1;//중복선언 불가, 재할당 불가
+    // // c = 2;
+
+    
+  </script>
+</body>
+</html>
