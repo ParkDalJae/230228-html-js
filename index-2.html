@@ -24,10 +24,10 @@
     const root = document.getElementById('root');
     
     const elementMaker = {
-      tagName: "",
-      setAttriName: "",
-      setAttriValue: "",
-      parent: "",
+      tagName: "header",
+      setAttriName: "id",
+      setAttriValue: 'test-0',
+      parent: root,
 
       maker:function(){
         const element = document.createElement(this.tagName);
@@ -36,11 +36,13 @@
       } ,
 
       loopFunc : function(){
-        for(i=0;i<100;i++){
+        for(let i=0;i<100;i++){
+          this.setAttriValue=`test-${i+1}`;
           this.maker();
         }
       } ,
-    }//안돌아감. 매개변수 부분 손볼 필요 있음
+    }
+    elementMaker.maker();
     elementMaker.loopFunc();
 
 
@@ -54,9 +56,9 @@
     //   ulMaker('header','id',`test-${i}`,root)
     // }
 
-    // root.children[65].style.width = "200px";
-    // root.children[65].style.height = "200px";
-    // root.children[65].style.backgroundColor = "red";
+    root.children[65].style.width = "200px";
+    root.children[65].style.height = "200px";
+    root.children[65].style.backgroundColor = "red";
 
   </script>
 </body>
