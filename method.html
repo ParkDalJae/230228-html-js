@@ -6,10 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
+<body> 
   <div id="root"></div>
-  <script src="/js/a.js"></script>
-  <script src="/js/b.js"></script>
-  <script src="/js/c.js"></script>
+  <script >
+    const abroot = document.getElementById('root')
+    console.dir(abroot) 
+
+    let newChil = document.createElement('div')
+    abroot.appendChild(newChil)  
+    
+    // console.dir(newChil.style.setProperty())
+
+  </script>
+
+  <!-- <script src="/js/b.js"></script>
+  <script src="/js/c.js"></script> -->
 </body>
 </html>
